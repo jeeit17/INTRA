@@ -75,7 +75,7 @@
             <span class="author-block">
               <a href="https://utkarshsinha.com">Hoigi Seo</a><sup>1</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Se Young Chun</a><sup>2</sup>,
+              <a href="https://jonbarron.info">Se Young Chun</a><sup>1, 2</sup>,
             </span>
           </div>
 
@@ -239,7 +239,10 @@
             through contrastive learning with exocentric images only, eliminating the need for paired datasets. 
             Moreover, we leverage vision-language model embeddings for performing affordance grounding flexibly with any text, 
             designing text-conditioned affordance map generation to reflect interaction relationship for contrastive learning
-            and enhancing robustness with our text synonym augmentation. Our method outperformed prior arts on diverse datasets such as 
+            and enhancing robustness with our text synonym augmentation. 
+          </p>
+          <p>
+            Our method outperformed prior arts on diverse datasets such as 
             AGD20K, IIT-AFF, CAD and UMD. Additionally, experimental results demonstrate that our method has remarkable domain scalability 
             for synthesized images / illustrations and is capable of performing affordance grounding for novel interactions and objects.           
           </p>
@@ -250,7 +253,6 @@
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Video</h2>
         <div class="publication-video">
           <iframe src="https://www.youtube.com/embed/MrKrnHhk8IA?rel=0&amp;showinfo=0"
                   frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -270,10 +272,11 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Visual Effects</h2>
+          <h2 class="title is-3">Pipeline</h2>
           <p>
-            Using <i>nerfies</i> you can create fun visual effects. This Dolly zoom effect
-            would be impossible without nerfies since it would require going through a wall.
+            INTRA takes only exocentric images and interaction labels to yield an affordance map through our affordance map generation module. 
+            Training is done via interaction relationship-guided contrastive learning on exocentric features from affordance maps. 
+            Note that all encoder parameters are frozen.
           </p>
           <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
             <source src="./static/videos/dollyzoom-stacked.mp4"
