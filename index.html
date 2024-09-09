@@ -19,7 +19,7 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 25%; /* Adjust the size as needed */
+      width: 20%; /* Adjust the size as needed */
     }
     .colored-section {
       background-color: #F8F8F8; /* Replace with your desired color code or name */
@@ -51,28 +51,25 @@
   <script src="./static/js/index.js"></script>
 </head>
 <body>
-  <img src="./static/images/title.png" alt="Project Logo" class="logo">
-
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
       </a>
     </div>
-  </div>
-</nav>
-
-
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="https://keunhong.com">
+        <span class="icon">
+            <i class="fas fa-home"></i>
+        </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <img src="./static/images/title.png" alt="Project Logo" class="logo">
 <section class="hero">
   <div class="hero-body">
     <div class="container is-max-desktop">
@@ -81,29 +78,18 @@
           <h1 class="title is-1 publication-title">INTRA: Interaction Relationship-aware Weakly Supervised Affordance Grounding</h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://keunhong.com">Ji Ha Jang</a><sup>1</sup>,</span>
+              <a href="https://keunhong.com">Ji Ha Jang</a><sup>1, *</sup>,</span>
             <span class="author-block">
-              <a href="https://utkarshsinha.com">Hoigi Seo</a><sup>1</sup>,</span>
+              <a href="https://utkarshsinha.com">Hoigi Seo</a><sup>1, *</sup>,</span>
             <span class="author-block">
-              <a href="https://jonbarron.info">Se Young Chun</a><sup>1,2</sup>,
+              <a href="https://icl.snu.ac.kr/pi">Se Young Chun</a><sup>1,2</sup>,
             </span>
-            <!-- <span class="author-block">
-              <a href="http://sofienbouaziz.com">Sofien Bouaziz</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://www.danbgoldman.com">Dan B Goldman</a><sup>2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="https://homes.cs.washington.edu/~seitz/">Steven M. Seitz</a><sup>1,2</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://www.ricardomartinbrualla.com">Ricardo Martin-Brualla</a><sup>2</sup>
-            </span> -->
           </div>
 
           <div class="is-size-5 publication-authors">
             <span class="author-block"><sup>1</sup>Dept. of Electrical and Computer Engineering</span>
             <span class="author-block"><sup>2</sup>INMC & IPAI</span>
+            <span class="author-block"><sup>*</sup>These authors contributed equally to this work</span>
             <h2 class>Seoul National University, Republic of Korea</h2>
             <h1 class> <b>ECCV 2024</b> </h1>
           </div>
@@ -212,7 +198,9 @@
       </div>
     </div>
     <!--/ Abstract. -->
-
+  </div>
+</section>
+<section class="section">
     <!-- Paper video. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -223,8 +211,6 @@
         </div>
       </div>
     </div>
-    <!--/ Paper video. -->
-  </div>
 </section>
 
 <section class="section">
@@ -255,7 +241,8 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Method</h2>
-        <!-- <div class="content has-text-justified">
+        <img src="./static/images/">
+        <div class="content has-text-justified">
           <p>
             Affordance denotes the potential interactions inherent in objects. 
             The perception of affordance can enable intelligent agents to navigate and interact with new environments efficiently.
