@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MBTH7DCN');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="utf-8">
   <meta name="description"
         content="INTRA: Interaction Relationship-aware Weakly Supervised Affordance Grounding">
@@ -12,22 +19,18 @@
       display: block;
       margin-left: auto;
       margin-right: auto;
-      width: 50%; /* Adjust the size as needed */
+      width: 25%; /* Adjust the size as needed */
+    }
+    .colored-section {
+      background-color: #F8F8F8; /* Replace with your desired color code or name */
+      padding: 20px; /* Optional: Add padding for better spacing */
     }
   </style>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-PYVRSFMDRL');
-  </script> -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MBTH7DCN"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
@@ -102,7 +105,7 @@
             <span class="author-block"><sup>1</sup>Dept. of Electrical and Computer Engineering</span>
             <span class="author-block"><sup>2</sup>INMC & IPAI</span>
             <h2 class>Seoul National University, Republic of Korea</h2>
-            <h1 class> ECCV 2024 </h1>
+            <h1 class> <b>ECCV 2024</b> </h1>
           </div>
 
           <div class="column has-text-centered">
@@ -171,11 +174,9 @@
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video> -->
-      <img src="./static/images/result_intra.gif"
+      <img src="./static/images/result_intra.gif">
       <h2 class="subtitle has-text-centered">
         We present INTRA, a novel approach to weakly supervised affordance grounding by framing the task as a representation learning problem. 
-        Unlike prior methods, INTRA enables inference on unseen interactions through a combination of text synonym augmentation, a text-conditioned affordance map generation module, and interaction relationship-guided contrastive learning. 
-        Additionally, our approach reduces the dependency on paired training datasets, allowing for more flexible weak supervision and improved scalability across domains, particularly for unseen objects, by leveraging vision-language models (VLMs). 
         INTRA surpasses previous state-of-the-art methods in weakly supervised affordance grounding on diverse datasets such as AGD20K, IIT-AFF, CAD, and UMD, demonstrating superior performance both qualitatively and quantitatively.
       </h2>
     </div>
@@ -183,13 +184,12 @@
 </section>
 
 
-<section class="section">
+<section class="colored-section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
-        <p style="background-color:cornsilk">
         <div class="content has-text-justified">
           <p>
             Affordance denotes the potential interactions inherent in objects. 
@@ -233,23 +233,15 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Motivation</h2>
+        <img src="./static/images/motivation.png">
         <div class="content has-text-justified">
           <p>
-            Affordance denotes the potential interactions inherent in objects. 
-            The perception of affordance can enable intelligent agents to navigate and interact with new environments efficiently.
+          Recent advances in weakly supervised affordance grounding have shown strong performance by using pairs of exocentric and egocentric images, allowing deep neural networks to learn affordances by focusing on object parts involved in interactions.
           </p>
           <p>
-            Weakly supervised affordance grounding teaches agents the concept of affordance without costly pixel-level annotations, but with exocentric images.
-            Although recent advances in weakly supervised affordance grounding yielded promising results, there remain challenges including the requirement for 
-            paired exocentric and egocentric image dataset, and the complexity in grounding diverse affordances for a single object.
-          </p>
-          <p>
-            To address them, we propose  INTeraction Relationship-aware weakly supervised Affordance grounding (INTRA). 
-            Unlike prior arts, INTRA recasts this problem as representation learning to identify unique features of interactions through contrastive learning with exocentric images only, eliminating the need for paired datasets.
-            Moreover, we leverage vision-language model embeddings for performing affordance grounding flexibly with any text, designing text-conditioned affordance map generation to reflect interaction relationship for contrastive learning and enhancing robustness with our text synonym augmentation. 
-            Our method outperformed prior arts on diverse datasets such as AGD20K, IIT-AFF, CAD and UMD.
-            Additionally, experimental results demonstrate that our method has remarkable domain scalability for synthesized images / illustrations and is capable of performing affordance grounding for novel interactions and objects.
-          </p>
+          However, challenges remain. The reliance on image pairs for weak labels is still strong, despite humans not needing egocentric images for learning. 
+          Additionally, complex relationships between interactions, such as many-to-many associations or interactions that overlap (e.g., "sip" often includes "hold"), have not been fully addressed, making it difficult to accurately extract interaction-relevant features and leading to biases in affordance grounding.
+          </p>  
         </div>
       </div>
     </div>
