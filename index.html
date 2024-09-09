@@ -244,18 +244,21 @@
         <img src="./static/images/INTRA_method.png">
         <div class="content has-text-justified">
           <p>
-            Affordance denotes the potential interactions inherent in objects. 
-            The perception of affordance can enable intelligent agents to navigate and interact with new environments efficiently.
+            Overall frameworks of (a) LOCATE and (b) INTRA (Ours). 
+            LOCATE takes paired exocentric and egocentric images to generate interaction-aware affordance maps (CAMs) for predefined interactions and then selects an interaction-related CAM by the given interaction label. 
+            In contrast, INTRA takes only exocentric images and interaction labels to yield an affordance map through our affordance map generation module. 
+            Training is done via interaction relationship-guided contrastive learning on exocentric features from affordance maps. 
+            Note that all encoder parameters are frozen.
           </p>
          
         </div>
         <img src="./static/images/INTRA_realtionshipmap.png">
         <div class="content has-text-justified">
           <p>
-            Affordance denotes the potential interactions inherent in objects. 
-            The perception of affordance can enable intelligent agents to navigate and interact with new environments efficiently.
+            The overall scheme of interaction-relationship map ($\mathcal{R}$) generation. 
+            LLM classifies all pairs of interactions in the dataset as positive or negative through chain of thoughts. 
+            This process is based on reasoning if interactions occur on same object parts.
           </p>
-         
         </div>
       </div>
     </div>
@@ -269,8 +272,9 @@
         <source src="./static/videos/teaser.mp4"
                 type="video/mp4">
       </video> -->
-      <img src="./static/images/tsne_intra.gif"
-      <h2 class="subtitle has-text-centered">
+      <h2 class="title is-3">Discussion</h2>
+      <img src="./static/images/tsne_intra.gif">
+      <h2 class="content has-text-centered">
         <p>
         (a) Our rationale for learning affordance grounding solely with exocentric images relies on the consistent presence of humans within these images. 
         By repelling common features of negative pairs, such as human parts, the images effectively exclude irrelevant elements. 
@@ -292,22 +296,81 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Results</h2>
+        <h3 class="title is-4">Quantitative Results</h3>
+        <img src="./static/images/INTRA_table1.png">
         <div class="content has-text-justified">
           <p>
-            Affordance denotes the potential interactions inherent in objects. 
-            The perception of affordance can enable intelligent agents to navigate and interact with new environments efficiently.
+            Quantitative results of ours and other baselines on the AGD20K dataset. 
+            $\uparrow$ / $\downarrow$ indicates that higher / lower the metric is, the better the model performs. 
+            INTRA outperformed all baselines, despite being trained only with exocentric images, whereas other models incorporated both exocentric and egocentric images during training.
           </p>
+        </div>
+        <img src="./static/images/INTRA_table2.png">
+        <div class="content has-text-justified">
           <p>
-            Weakly supervised affordance grounding teaches agents the concept of affordance without costly pixel-level annotations, but with exocentric images.
-            Although recent advances in weakly supervised affordance grounding yielded promising results, there remain challenges including the requirement for 
-            paired exocentric and egocentric image dataset, and the complexity in grounding diverse affordances for a single object.
+            Quantitative results on the modified IIT-AFF, CAD, and UMD dataset for our method and other baselines. 
+            Models were trained in the 'Seen' setting of AGD20K and tested on the datasets without additional training. 
+            INTRA outperformed all baselines on all metrics across all datasets.
+            * Objects with affordances that prior works are unable to predict were eliminated from the datasets for fairness, wheares our method can infer affordances on novel interactions.
           </p>
+        </div>   
+        <h3 class="title is-4 ">Qualitative Results</h3>
+        <img src="./static/images/INTRA_qual1.png">
+        <div class="content has-text-justified">
           <p>
-            To address them, we propose  INTeraction Relationship-aware weakly supervised Affordance grounding (INTRA). 
-            Unlike prior arts, INTRA recasts this problem as representation learning to identify unique features of interactions through contrastive learning with exocentric images only, eliminating the need for paired datasets.
-            Moreover, we leverage vision-language model embeddings for performing affordance grounding flexibly with any text, designing text-conditioned affordance map generation to reflect interaction relationship for contrastive learning and enhancing robustness with our text synonym augmentation. 
-            Our method outperformed prior arts on diverse datasets such as AGD20K, IIT-AFF, CAD and UMD.
-            Additionally, experimental results demonstrate that our method has remarkable domain scalability for synthesized images / illustrations and is capable of performing affordance grounding for novel interactions and objects.
+            Prior works on weakly-supervised affordance grounding like LOCATE often failed to ground different affordances for the same object. 
+            However, our proposed INTRA yielded finer and more accurate grounding results for them that are closer to the ground truth (GT) by considering interaction relationship among them.
+          </p>
+        </div>
+        <img src="./static/images/INTRA_qual2.png">
+        <div class="content has-text-justified">
+          <p>
+            Qualitative results of INTRA (Ours) and baseline models on grounding affordances of multiple potential interactions on a single object. 
+            INTRA precisely localizes relevant interaction spots for each interaction. 
+            For example, with a knife, it grounds the handle for 'Hold' and the blade for 'Cut with'. 
+            For a motorcycle, it accurately grounds the saddle for 'Sit on'. Additionally, for 'Ride', it grounds both the handle and saddle, slightly deviating from the GT but still producing reasonable results, as we usually interacts with handle and saddle to 'Ride' a motorcycle.
+          </p>
+        </div>   
+        <img src="./static/images/INTRA_qual3.png">
+        <div class="content has-text-justified"></div>
+          <p>
+            Qualitative results comparison between our approach and other baselines. 
+            Our approach, INTRA, demonstrates superior precision and detail in grounding affordances compared to the baselines. 
+            For instance, in the example of 'Drag', while baselines either fail to localize the handle or erroneously ground several other parts, INTRA accurately identifies and grounds the handle of a suitcase with finesse.
+          </p>
+        </div> 
+        <h3 class="title is-4">User Study</h3>
+        <img src="./static/images/INTRA_table3.png">
+        <div class="content has-text-justified">
+          <p>
+            The result of user study on validity, finesse, and separability. 
+            Users were asked to score a 5-point scale, and we averaged it for mean opinion score (MOS).
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section"></section>
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Ablation Study</h2>
+        <img src="./static/images/INTRA_abla1.png">
+        <div class="content has-text-justified">
+          <p>
+            Quantitative results of ablation study on our loss design. 
+            We incrementally added each component of the losses to examine their impact.
+          </p> 
+        </div>
+        <img src="./static/images/INTRA_abla2.png">
+        <div class="content has-text-justified">
+          <p>
+            Quantitative results of ablation study on different $\mathcal{R}$.  
+            $\mathcal{L}_{WordNet}$, $\mathcal{L}_{Word2Vec}$ are calculated using word similarity from WordNet, Word2Vec, respectively. 
+            $\mathcal{L}_{Co-occur.}$ used co-occurrence probability in GloVe.
           </p>
         </div>
       </div>
@@ -316,15 +379,14 @@
 </section>
 
 
-
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
     <pre><code>@article{park2021nerfies,
-  author    = {Park, Keunhong and Sinha, Utkarsh and Barron, Jonathan T. and Bouaziz, Sofien and Goldman, Dan B and Seitz, Steven M. and Martin-Brualla, Ricardo},
-  title     = {Nerfies: Deformable Neural Radiance Fields},
-  journal   = {ICCV},
-  year      = {2021},
+  author    = {Jang, Ji Ha and Seo, Hoigi and Chun, Se Young},
+  title     = {INTRA: Interaction Relationship-aware Weakly Supervised Affordance Grounding},
+  journal   = {ECCV},
+  year      = {2024},
 }</code></pre>
   </div>
 </section>
