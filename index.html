@@ -21,7 +21,7 @@
         content="INTRA: Interaction Relationship-aware Weakly Supervised Affordance Grounding">
   <meta name="keywords" content="Affordance grounding, Weak supervision, Exocentric image, Contrastive learning, Interaction relation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>INTRA: Interaction Relationship-aware Weakly Supervised Affordance Grounding</title>
+  <title><font color="#3366ff">INTRA</font>: Interaction Relationship-aware Weakly Supervised Affordance Grounding</title>
   <style>
     .logo {
       display: block;
@@ -254,8 +254,6 @@
         Recent advances in weakly supervised affordance grounding have shown strong performance by using pairs of exocentric and egocentric images, allowing deep neural networks to learn affordances by focusing on object parts involved in interactions. However, challenges remain. The reliance on image pairs for weak labels is still strong, despite humans not needing egocentric images for learning. Additionally, complex relationships between interactions, such as many-to-many associations or interactions that overlap (e.g., "sip" often includes "hold"), have not been fully addressed, making it difficult to accurately extract interaction-relevant features and leading to biases in affordance grounding.
         </p>
         <br><br>
-
-
     </div>
   </div>
 </section>
@@ -281,7 +279,7 @@
         <br><br>
         <div class="columns is-vcentered is-centered">
           <br>
-          <img src="./static/images/INTRA_realtionshipmap.png" class="interpolation-image" alt="overall pipeline"
+          <img src="./static/images/INTRA_realtionshipmap.png" class="interpolation-image" alt="relationship map generation"
             style="width: 80%;" />
         </div>
         <p style="text-align:justify">
@@ -304,25 +302,13 @@
         <img src="./static/images/tsne_intra.gif" class="interpolation-image" alt="overall pipeline"
           style="width: 80%;" />
       </div>
-      <p style="text-align:justify">
-        Overall frameworks of (a) LOCATE and (b) INTRA (Ours). 
-        LOCATE takes paired exocentric and egocentric images to generate interaction-aware affordance maps (CAMs) for predefined interactions and then selects an interaction-related CAM by the given interaction label. 
-        In contrast, INTRA takes only exocentric images and interaction labels to yield an affordance map through our affordance map generation module. 
-        Training is done via interaction relationship-guided contrastive learning on exocentric features from affordance maps. 
-        Note that all encoder parameters are frozen. </p>
-        <br><br>
-        <div class="columns is-vcentered is-centered">
-          <br>
-          <img src="./static/images/INTRA_realtionshipmap.png" class="interpolation-image" alt="overall pipeline"
-            style="width: 80%;" />
-        </div>
         <p style="text-align:justify">
           (a) Our rationale for learning affordance grounding solely with exocentric images relies on the consistent presence of humans within these images. 
           By repelling common features of negative pairs, such as human parts, the images effectively exclude irrelevant elements. 
           Conversely, positive pairs, sharing the desired feature of the object—specifically, the rim of the object near the face—facilitate learning by attracting these relevant features. </p>
         <p style="text-align:justify">
-          (b) To visualize the effectiveness of our loss in learning interaction-relevant features in similar images, we examine the feature distributions of `Hold' and `Sip' a wine glass, involving distinct affordances. 
-          Prior to training, these distributions overlap. However, after training with our loss function, the feature distribution for `Hold wine glass' aligns more closely with `Hold baseball bat' than with `Sip wine glass'. This indicates that our loss function effectively discriminates between the characteristics of different interactions without exhibiting bias towards objects. </p>
+          (b) To visualize the effectiveness of our loss in learning interaction-relevant features in similar images, we examine the feature distributions of 'Hold' and 'Sip' a wine glass, involving distinct affordances. 
+          Prior to training, these distributions overlap. However, after training with our loss function, the feature distribution for `Hold wine glass' aligns more closely with 'Hold baseball bat' than with 'Sip wine glass'. This indicates that our loss function effectively discriminates between the characteristics of different interactions without exhibiting bias towards objects. </p>
           <br><br>
     </div>
   </div>
@@ -403,6 +389,25 @@
 </section>
 
       <br><br>
+
+<section>
+  <div class="rows">
+    <div class="row is-full-width">
+      <h2 class="title is-3">Feasibility study</h2>
+      <div class="columns is-vcentered is-centered">
+        <br>
+        <img src="./static/images/INTRA_feasibility.png" class="interpolation-image"alt="Motivation"
+          style="width: 80%;" />
+      </div>
+      <p style="text-align:justify">
+        Feasibility study on ability to ground (a) images with large domain gap, (b) images with novel objects, (c) text input of novel interaction was conducted to LOCATE and INTRA.</p>
+        <br><br>
+    </div>
+  </div>
+</section>
+
+      <br><br>
+
 <section>
 <div class="rows">
   <div class="row is-full-width">
@@ -453,10 +458,10 @@
   <div class="container">
     <div class="content has-text-centered">
       <a class="icon-link"
-         href="./static/videos/nerfies_paper.pdf">
+         href="./static/INTRA.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://github.com/keunhong" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/jeeit17" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
