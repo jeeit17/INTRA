@@ -133,27 +133,7 @@
                   <span>Video</span>
                 </a>
               </span>
-              <!-- Code Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              #!-- Dataset Link. -->
-              <!-- <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Data</span>
-                  </a> --> 
             </div>
-
           </div>
         </div>
       </div>
@@ -164,13 +144,8 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
-        <source src="./static/videos/teaser.mp4"
-                type="video/mp4">
-      </video> -->
       <img src="./static/images/result_intra.gif">
       <div class="columns is-vcentered is-centered">
-
       <p style="text-align:justify">
         We present INTRA, a novel approach to weakly supervised affordance grounding by framing the task as a representation learning problem. 
         INTRA surpasses previous state-of-the-art methods in weakly supervised affordance grounding on diverse datasets such as AGD20K, IIT-AFF, CAD, and UMD, demonstrating superior performance both qualitatively and quantitatively.
@@ -183,7 +158,6 @@
 
 <section class="colored-section">
   <div class="container is-max-desktop">
-    <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
@@ -244,7 +218,6 @@
   <div class="rows">
     <div class="row is-full-width">
       <h2 class="title is-3">Motivation</h2>
-      <!-- <h3 class="title is-4">Diverse Human Preferences in Realistic Scenarios</h3> -->
       <div class="columns is-vcentered is-centered">
         <br>
         <img src="./static/images/motivation.png" class="interpolation-image"alt="Motivation"
@@ -264,7 +237,6 @@
   <div class="rows">
     <div class="row is-full-width">
       <h2 class="title is-3">Method</h2>
-      <!-- <h3 class="title is-4">Diverse Human Preferences in Realistic Scenarios</h3> -->
       <div class="columns is-vcentered is-centered">
         <br>
         <img src="./static/images/INTRA_method.png" class="interpolation-image" alt="overall pipeline"
@@ -307,8 +279,8 @@
           By repelling common features of negative pairs, such as human parts, the images effectively exclude irrelevant elements. 
           Conversely, positive pairs, sharing the desired feature of the object—specifically, the rim of the object near the face—facilitate learning by attracting these relevant features. </p>
         <p style="text-align:justify">
-          (b) To visualize the effectiveness of our loss in learning interaction-relevant features in similar images, we examine the feature distributions of 'Hold' and 'Sip' a wine glass, involving distinct affordances. 
-          Prior to training, these distributions overlap. However, after training with our loss function, the feature distribution for `Hold wine glass' aligns more closely with 'Hold baseball bat' than with 'Sip wine glass'. This indicates that our loss function effectively discriminates between the characteristics of different interactions without exhibiting bias towards objects. </p>
+          (b) To visualize the effectiveness of our loss in learning interaction-relevant features in similar images, we examine the feature distributions of "Hold" and "Sip" a wine glass, involving distinct affordances. 
+          Prior to training, these distributions overlap. However, after training with our loss function, the feature distribution for "Hold wine glass" aligns more closely with "Hold baseball bat" than with "Sip wine glass". This indicates that our loss function effectively discriminates between the characteristics of different interactions without exhibiting bias towards objects. </p>
           <br><br>
     </div>
   </div>
@@ -369,8 +341,8 @@
               <p style="text-align:justify">
                 Qualitative results of INTRA (Ours) and baseline models on grounding affordances of multiple potential interactions on a single object. 
                 INTRA precisely localizes relevant interaction spots for each interaction. 
-                For example, with a knife, it grounds the handle for 'Hold' and the blade for 'Cut with'. 
-                For a motorcycle, it accurately grounds the saddle for 'Sit on'. Additionally, for 'Ride', it grounds both the handle and saddle, slightly deviating from the GT but still producing reasonable results, as we usually interacts with handle and saddle to 'Ride' a motorcycle.    
+                For example, with a knife, it grounds the handle for "Hold" and the blade for "Cut with". 
+                For a motorcycle, it accurately grounds the saddle for "Sit on". Additionally, for "Ride", it grounds both the handle and saddle, slightly deviating from the GT but still producing reasonable results, as we usually interacts with handle and saddle to "Ride" a motorcycle.    
               </p>
                 <br><br>
                 <div class="columns is-vcentered is-centered">
@@ -381,7 +353,7 @@
                 <p style="text-align:justify">
                   Qualitative results comparison between our approach and other baselines. 
                   Our approach, INTRA, demonstrates superior precision and detail in grounding affordances compared to the baselines. 
-                  For instance, in the example of 'Drag', while baselines either fail to localize the handle or erroneously ground several other parts, INTRA accurately identifies and grounds the handle of a suitcase with finesse.
+                  For instance, in the example of "Drag", while baselines either fail to localize the handle or erroneously ground several other parts, INTRA accurately identifies and grounds the handle of a suitcase with finesse.
                 </p>
                   <br><br>
   </div>
