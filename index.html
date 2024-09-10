@@ -200,6 +200,24 @@
     <!--/ Abstract. -->
   </div>
 </section>
+<section class="section"></section>
+  <div class="container is-max-widescreen">
+
+    <div class="rows">
+
+<style>
+  .centered-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .interpolation-image {
+    display: block;
+    margin: 20px 0;  /* Give some space above and below the image */
+  }
+</style>
 <!-- <section class="section">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -224,7 +242,7 @@
 
       <div class="columns is-vcentered is-centered">
           <br>
-          <img src="./static/images/motivation.png" alt="Motivation"
+          <img src="./static/images/motivation.png" class="interpolation-image" alt="Motivation"
            style="width: 80%;" />
       </div>
     </div>
@@ -233,22 +251,6 @@
 
       <br><br>
 
-<section class="section">
-  <div class="rows">
-    <div class="row is-full-width">
-    <!-- Abstract. -->
-    <h2 class="title is-3">Motivation</h2>
-        <img src="./static/images/motivation.png">
-          <p>
-          Recent advances in weakly supervised affordance grounding have shown strong performance by using pairs of exocentric and egocentric images, allowing deep neural networks to learn affordances by focusing on object parts involved in interactions.
-          </p>
-          <p>
-          However, challenges remain. The reliance on image pairs for weak labels is still strong, despite humans not needing egocentric images for learning. 
-          Additionally, complex relationships between interactions, such as many-to-many associations or interactions that overlap (e.g., "sip" often includes "hold"), have not been fully addressed, making it difficult to accurately extract interaction-relevant features and leading to biases in affordance grounding.
-          </p>  
-        </div>
-      </div>
-</section>
     <!--/ Abstract. -->
 
 <section class="section">
